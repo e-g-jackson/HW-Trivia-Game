@@ -1,0 +1,28 @@
+body{
+    color: #ffffff;
+}
+#mainDiv{
+    background-color: #555555;
+    position:relative;
+    top: 75px;
+    height: 500px;
+    /* right: 8.333%;
+    left: 8.333%; */
+}
+#infoText{
+    display: relative;
+    text-align: center;
+    margin-bottom: 25px;
+}
+@media (min-width:768px){
+    #mainDiv{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
+@media (min-width: 667px){
+    #mainDiv{
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+}
