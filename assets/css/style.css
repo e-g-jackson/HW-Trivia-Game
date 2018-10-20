@@ -1,28 +1,119 @@
+h2{
+    vertical-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    top: 150px;
+}
 body{
     color: #ffffff;
+    min-height: 750px;
+    background-image: url('../images/scattered-sigil.jpg');
 }
-#mainDiv{
+
+header{
+    padding-bottom: 10px;
+}
+
+footer{
     background-color: #555555;
+    position: fixed;
+    bottom: 0px;
+    height: 50px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+}
+
+.answerButton{
+    float: right;
+    width: 85%;
+    margin: 20px;
+    position: relative;
+    right: 20px;
+}
+
+.clearfix::after{
+    content: "";
+    clear:both;
+    display: table;
+}
+
+#mainDiv{
+    background-color: #222222;
+    font-size: 20px;
     position:relative;
     top: 75px;
-    height: 500px;
-    /* right: 8.333%;
-    left: 8.333%; */
+    min-height: 400px;
+    display: table;
+    padding: 0px;
+    text-align: center;
 }
+
+#questDiv{
+    background-color: #888888;
+    display: flex;
+    float: left;
+    width: 40%;
+    padding: 20px;
+}
+
+#ansDiv{
+    background-color: #444444;
+    display: table;
+    height: 100%;
+    width: 60%;
+    position:relative;
+}
+
 #infoText{
     display: relative;
     text-align: center;
+    margin-top: 60px;
     margin-bottom: 25px;
+    margin-left: auto;
+    margin-right: auto;
 }
-@media (min-width:768px){
+
+#startButton, #letsGoButton{
+    height: 75px;
+    position: relative;
+    top: 35px;
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+}
+#reloadButton{
+    position: static;
+}
+
+#scoreDiv{
+    font-size: 25px;
+    padding: 15px;
+}
+
+#pic{
+    margin: auto;
+}
+
+@media screen and (min-width:768px){
     #mainDiv{
         margin-left: 0px;
         margin-right: 0px;
     }
+    /* #pic{
+        width: 100px;
+        height: auto;
+    } */
 }
-@media (min-width: 667px){
+@media screen and (min-width: 667px){
     #mainDiv{
         margin-left: 0px;
         margin-right: 0px;
     }
+    /* #pic{
+        width: 75px;
+        height: auto;
+    } */
 }
