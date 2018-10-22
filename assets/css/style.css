@@ -52,7 +52,7 @@ footer{
 }
 
 #questDiv{
-    background-color: #888888;
+    background-color: #222222;
     display: flex;
     float: left;
     width: 40%;
@@ -60,7 +60,7 @@ footer{
 }
 
 #ansDiv{
-    background-color: #444444;
+    background-color: #222222;
     display: table;
     height: 100%;
     width: 60%;
@@ -97,20 +97,44 @@ footer{
     margin: auto;
 }
 
-@media screen and (min-width:768px){
+@media (min-width:768px){
     #mainDiv{
         margin-left: 0px;
         margin-right: 0px;
+        border: green 4px solid;
     }
     /* #pic{
         width: 100px;
         height: auto;
     } */
 }
-@media screen and (min-width: 667px){
+@media screen and (max-width: 667px){
     #mainDiv{
+        height: 600px;
         margin-left: 0px;
         margin-right: 0px;
+        border: red 4px solid;
+        display: table;
+    }
+    #questDiv{
+        width: 75%;
+        height: auto;
+        display: block;
+    }
+    #scoreDiv{
+        break-before: always;
+        display: block;
+    }
+    #pic{
+        position: static;
+        width:50%;
+        height: auto;
+
+    }
+    #ansDiv{
+        width: 100%;
+        position: static;
+
     }
     /* #pic{
         width: 75px;
