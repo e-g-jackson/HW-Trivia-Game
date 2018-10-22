@@ -97,24 +97,14 @@ footer{
     margin: auto;
 }
 
-@media (min-width:768px){
-    #mainDiv{
-        margin-left: 0px;
-        margin-right: 0px;
-        border: green 4px solid;
-    }
-    /* #pic{
-        width: 100px;
-        height: auto;
-    } */
-}
 @media screen and (max-width: 667px){
     #mainDiv{
         height: 600px;
         margin-left: 0px;
         margin-right: 0px;
-        border: red 4px solid;
         display: table;
+        margin-bottom: 75px;
+        margin-top: -40px;
     }
     #questDiv{
         width: 75%;
