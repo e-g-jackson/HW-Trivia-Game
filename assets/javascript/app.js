@@ -189,7 +189,7 @@ function showQ(){
     var timeout = setTimeout(function(){
         alert('time\'s up!');
         $('#mainDiv').html("<h2>Sorry, you ran out of Time!</h2>");
-    }, 100000)
+    }, 10000)
     $('.answerButton').on('click', function(){
         console.log($(this).attr('id'));
         if($(this).attr('id') == liveQuestion.ans){
