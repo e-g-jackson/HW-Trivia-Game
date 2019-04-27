@@ -133,89 +133,92 @@ function scoreKeeper(){
 };
 //Game Start
 function showQ(){
+    // console.log('showQ initiated')
     $(question)
     $(qLength)
     var spawner = function(){
-    var liveQuestion = question[i];
-    var qDiv = $('<div></div>');
-    var quest = $('<img>');
+        // console.log('spawner working')
+        var liveQuestion = question[i];
+        var qDiv = $('<div></div>');
+        var quest = $('<img />');
             quest.attr('src', question[i].q); 
             quest.attr('id', 'pic');
-    var questDiv = $('<div></div>');
-        questDiv.attr('id', 'questDiv');
-        quest.appendTo(questDiv);
-        questDiv.appendTo(qDiv);
+        var questDiv = $('<div></div>');
+            questDiv.attr('id', 'questDiv');
+            quest.appendTo(questDiv);
+            questDiv.appendTo(qDiv);
 
-    var ansA =$('<button></button>') ;
-        $(ansA).attr('id', 'a');
-        $(ansA).attr('class', 'btn btn-success answerButton');
-        $(ansA).html("A) " + liveQuestion.a);
+        var ansA = $('<button></button>') ;
+            $(ansA).attr('id', 'a');
+            $(ansA).attr('class', 'btn btn-success answerButton');
+            $(ansA).html("A) " + liveQuestion.a);
 
-    var ansB =$('<button></button>') ;
-        $(ansB).attr('id', 'b');
-        $(ansB).attr('class', 'btn btn-success answerButton');
-        $(ansB).html("B) " + liveQuestion.b);
+        var ansB = $('<button></button>') ;
+            $(ansB).attr('id', 'b');
+            $(ansB).attr('class', 'btn btn-success answerButton');
+            $(ansB).html("B) " + liveQuestion.b);
 
-    var ansC =$('<button></button>') ;
-        $(ansC).attr('id', 'c');
-        $(ansC).attr('class', 'btn btn-success answerButton');
-        $(ansC).html("C) " + liveQuestion.c);
+        var ansC = $('<button></button>') ;
+            $(ansC).attr('id', 'c');
+            $(ansC).attr('class', 'btn btn-success answerButton');
+            $(ansC).html("C) " + liveQuestion.c);
 
-    var ansD =$('<button></button>') ;
-        $(ansD).attr('id', 'd');
-        $(ansD).attr('class', 'btn btn-success answerButton');
-        $(ansD).html("D) " + liveQuestion.d);
+        var ansD = $('<button></button>') ;
+            $(ansD).attr('id', 'd');
+            $(ansD).attr('class', 'btn btn-success answerButton');
+            $(ansD).html("D) " + liveQuestion.d);
+            
+        var scoreDiv = $('<div></div>')
+            $(scoreDiv).attr('id', 'scoreDiv')
+            $(scoreDiv).html('Score: ' + score + ' Time: ' + time);
+            $(scoreDiv).appendTo(qDiv);
+
+        var ansDiv = $('<div></div>')
+            $(ansDiv).attr('id', 'ansDiv')
+            $(ansA).appendTo(ansDiv);
+            $(ansB).appendTo(ansDiv);
+            $(ansC).appendTo(ansDiv);
+            $(ansD).appendTo(ansDiv);
+            $(ansDiv).appendTo(qDiv);
         
-    var scoreDiv = $('<div></div>')
-        $(scoreDiv).attr('id', 'scoreDiv')
-        $(scoreDiv).html('Score: ' + score + ' Time: ' + time);
-        $(scoreDiv).appendTo(qDiv);
-
-    var ansDiv = $('<div></div>')
-        $(ansDiv).attr('id', 'ansDiv')
-        $(ansA).appendTo(ansDiv);
-        $(ansB).appendTo(ansDiv);
-        $(ansC).appendTo(ansDiv);
-        $(ansD).appendTo(ansDiv);
-        $(ansDiv).appendTo(qDiv);
-    
-    //Game Timer
-    $(qDiv).appendTo('#mainDiv');
-    countdown = setInterval(function(){
-        $(scoreDiv)
-        time--;
-        scoreDiv.html('Score: ' + score + ' Time: ' + time);
-    }, 1000)
-    var timeout = setTimeout(function(){
-        alert('time\'s up!');
-        $('#mainDiv').html("<h2>Sorry, you ran out of Time!</h2>");
-    }, 10000)
-    $('.answerButton').on('click', function(){
-        console.log($(this).attr('id'));
-        if($(this).attr('id') == liveQuestion.ans){
-            alert('well done!')
-            i++;
-            score++;
-            time = 10;
-            console.log(score);
-            $(qDiv).empty();
-            clearInterval(countdown);
-            clearInterval(timeout);
-            if ( i == 10){
-                victory()} 
-            else {spawner();}
-        } else {
-            alert('nope');
-            i++;
-            time = 10;
-            $(qDiv).empty();
-            clearInterval(countdown);
-            clearInterval(timeout);
-            if ( i == 10){
-                victory()}
-            else {spawner();}
-        }
-    })
+        //Game Timer
+        $(qDiv).appendTo('#mainDiv');
+        countdown = setInterval(function(){
+            $(scoreDiv)
+            time--;
+            scoreDiv.html('Score: ' + score + ' Time: ' + time);
+        }, 1000)
+        var convertedTime = time * 1000
+        var timeout = setTimeout(function(){
+            alert('time\'s up!');
+            $('#mainDiv').html("<h2>Sorry, you ran out of Time!</h2>");
+        }, convertedTime)
+        $('.answerButton').on('click', function(){
+            console.log($(this).attr('id'));
+            if($(this).attr('id') == liveQuestion.ans){
+                alert('well done!')
+                i++;
+                score++;
+                time = 10;
+                console.log(score);
+                $(qDiv).empty();
+                clearInterval(countdown);
+                clearInterval(timeout);
+                if ( i == 10){
+                    victory()} 
+                else {spawner();}
+            } else {
+                alert('nope');
+                i++;
+                time = 10;
+                $(qDiv).empty();
+                clearInterval(countdown);
+                clearInterval(timeout);
+                if ( i == 10){
+                    victory()}
+                else {spawner();}
+            }
+        })
     }
     spawner()
 };

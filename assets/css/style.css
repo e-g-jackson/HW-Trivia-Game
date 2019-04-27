@@ -64,7 +64,7 @@ footer{
     display: table;
     height: 100%;
     width: 60%;
-    position:relative;
+    /* position:relative; */
 }
 
 #infoText{
@@ -91,10 +91,26 @@ footer{
 #scoreDiv{
     font-size: 25px;
     padding: 15px;
+    max-height: 30px;
+    margin-bottom: 20px;
 }
 
 #pic{
     margin: auto;
+}
+@media screen and (max-width: 1050px){
+    #ansDiv{
+        width: 42%;
+        float: right;
+    }
+
+    #letsGoButton{
+        top:20px;
+    }
+
+    #scoreDiv{
+        padding-left: 50%;
+    }
 }
 
 @media screen and (max-width: 667px){
@@ -114,6 +130,7 @@ footer{
     #scoreDiv{
         break-before: always;
         display: block;
+        padding-left: 0%;
     }
     #pic{
         position: static;
